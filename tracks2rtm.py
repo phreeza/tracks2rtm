@@ -34,7 +34,6 @@ class RtmHandler:
         todos = bla.getElementsByTagName('todo')
         projects = bla.getElementsByTagName('project')
         project_dict = dict([(int(pj.getElementsByTagName('id')[0].firstChild.wholeText),{'name':pj.getElementsByTagName('name')[0].firstChild.wholeText}) for pj in projects])
-        project_dict
         tags = bla.getElementsByTagName('tag')
         tag_dict = dict([(int(tg.getElementsByTagName('id')[0].firstChild.wholeText),{'name':tg.getElementsByTagName('name')[0].firstChild.wholeText}) for tg in tags])
         todos_dict = dict([(int(td.getElementsByTagName('id')[0].firstChild.wholeText),{'desc':td.getElementsByTagName('description')[0].firstChild.wholeText,'done':not td.getElementsByTagName('completed-at')[0].hasAttribute('nil'),'tags':[]}) for td in todos])
